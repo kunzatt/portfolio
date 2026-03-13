@@ -246,10 +246,11 @@ section:last-child { border-bottom: none; }
   margin-bottom: 7px;
 }
 .role-header-label {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
 }
 .role-team {
   font-family: 'JetBrains Mono', monospace;
@@ -271,7 +272,7 @@ section:last-child { border-bottom: none; }
 .role-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10.5px;
-  color: var(--muted);
+  color: var(--text);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -303,7 +304,7 @@ section:last-child { border-bottom: none; }
   font-size: 9.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text);
   margin-bottom: 4px;
 }
 .stack-group {
@@ -316,7 +317,7 @@ section:last-child { border-bottom: none; }
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text);
   width: 76px;
   flex-shrink: 0;
 }
