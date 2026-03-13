@@ -297,7 +297,7 @@ section:last-child { border-bottom: none; }
   border-top: 1px solid var(--border);
 }
 .project-stack::before {
-  content: 'Tech Stack';
+  content: '기술 스택';
   display: block;
   font-family: 'JetBrains Mono', monospace;
   font-size: 9.5px;
