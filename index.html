@@ -277,11 +277,11 @@
               </div>
             </details>
             <details>
-              <summary>뉴스 API 없이 실시간 뉴스 제공 — Jsoup 크롤링, 스케줄러 설계</summary>
+              <summary>뉴스 API 없이 실시간 뉴스 제공 — jsoup 크롤링, 스케줄러 설계</summary>
               <div class="detail-body">
                 <p><strong>[문제 상황]</strong> 스마트 미러에 실시간 뉴스를 표시해야 했지만, 뉴스 Open API는 무료 플랜에서 호출 횟수 제한이 있어 지속적인 갱신이 어려웠습니다.</p>
                 <p>API 대신 직접 크롤링을 선택했으나, 네이버 뉴스 페이지의 HTML 구조를 파악하고 기사 목록과 본문을 정확히 추출하는 CSS selector를 찾는 데 시행착오가 있었습니다. 특히 본문 파싱 시 광고 문구, 이미지 설명 등 불필요한 요소가 포함되는 문제가 있었습니다.</p>
-                <p><strong>[해결 방안]</strong> Jsoup으로 <code>media.naver.com</code>을 크롤링하여 메인 기사 5건의 제목 및 URL을 추출하고, 각 기사 본문에서 <code>img</code>, <code>div</code>, <code>em</code> 등의 태그를 제거하여 텍스트만 정제하는 파싱 로직을 구현했습니다. DB에 id 1~5 고정으로 upsert하여 항상 최신 5건만 유지하고, 별도의 <code>NewsScheduler</code>에서 <code>@Scheduled(cron = "0 0 * * * *")</code>로 매시간 자동 갱신되도록 설계했습니다.</p>
+                <p><strong>[해결 방안]</strong> jsoup으로 <code>media.naver.com</code>을 크롤링하여 메인 기사 5건의 제목 및 URL을 추출하고, 각 기사 본문에서 <code>img</code>, <code>div</code>, <code>em</code> 등의 태그를 제거하여 텍스트만 정제하는 파싱 로직을 구현했습니다. DB에 id 1~5 고정으로 upsert하여 항상 최신 5건만 유지하고, 별도의 <code>NewsScheduler</code>에서 <code>@Scheduled(cron = "0 0 * * * *")</code>로 매시간 자동 갱신되도록 설계했습니다.</p>
                 <p><strong>[결과]</strong> 외부 API 비용과 호출 제한 없이 매시간 자동으로 최신 뉴스 제공, DB 상시 5건 유지로 불필요한 데이터 증가 방지</p>
               </div>
             </details>
