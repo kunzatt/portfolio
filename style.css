@@ -237,7 +237,25 @@ section:last-child { border-bottom: none; }
   margin-bottom: 12px;
 }
 .project-role {
-  margin-bottom: 14px;
+  margin-bottom: 20px;
+}
+.role-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+.role-header-label {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.role-team {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--muted);
+  opacity: 0.7;
 }
 .role-intro {
   font-size: 13px;
@@ -248,7 +266,7 @@ section:last-child { border-bottom: none; }
   display: flex;
   gap: 16px;
   align-items: baseline;
-  padding: 2px 0;
+  padding: 3px 0;
 }
 .role-label {
   font-family: 'JetBrains Mono', monospace;
@@ -263,6 +281,7 @@ section:last-child { border-bottom: none; }
 .role-pct {
   color: var(--accent);
   text-transform: none;
+  opacity: 0.7;
 }
 .role-desc {
   font-size: 13px;
@@ -274,6 +293,18 @@ section:last-child { border-bottom: none; }
   flex-direction: column;
   gap: 5px;
   margin-bottom: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.project-stack::before {
+  content: 'Tech Stack';
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
 }
 .stack-group {
   display: flex;
