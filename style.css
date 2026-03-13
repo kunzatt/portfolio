@@ -299,10 +299,9 @@ section:last-child { border-bottom: none; }
 .project-stack::before {
   content: '기술 스택';
   display: block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
   color: var(--text);
   margin-bottom: 4px;
 }
