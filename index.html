@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김용명 — Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="container">
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-layout">
+      <div class="hero-sidebar">
+        <div class="hero-photo-wrap">
+          <img src="IMG_7460 1.jpg" alt="김용명" class="hero-photo">
+        </div>
+        <div class="hero-contact">
+          <span class="contact-heading">Contact</span>
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <span class="contact-text">kunzatt2501@gmail.com</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/kunzatt" target="_blank">github.com/kunzatt</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <h1>기술의 깊이를 탐구하며 성장하는 개발자, 김용명입니다.</h1>
+        <div class="hero-intro">
+          <p>안녕하세요! 백엔드 개발자 김용명입니다.</p>
+          <p>성장하는 엔지니어가 되고 싶어 개발의 길을 선택하여 몰입하고 있습니다.</p>
+          <p>기술에 대해 깊이 있는 탐구를 지향합니다.</p>
+          <p>기술적 고민과 학습한 것들을 공유하며 함께 성장하는 것을 중요한 가치로 생각합니다.</p>
+          <p>Clean Code와 Test에 대해 고민하고 실천합니다.</p>
+          <p>팀 내 소통에서 적극적으로 의견을 나누며, 친절한 언어를 사용합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Skills</p>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <h3>Backend & Test</h3>
+        <ul>
+          <li>Java</li>
+          <li>Spring Boot</li>
+          <li>Spring MVC</li>
+          <li>Spring Security</li>
+          <li>Spring Data JPA</li>
+          <li>QueryDSL · MyBatis</li>
+          <li>Gradle · Maven</li>
+          <li>JUnit5 · Mockito · k6</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Database & DevOps</h3>
+        <ul>
+          <li>MySQL · PostgreSQL</li>
+          <li>Redis</li>
+          <li>Docker</li>
+          <li>Jenkins</li>
+          <li>Nginx</li>
+          <li>AWS EC2</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Tools & Collaboration</h3>
+        <ul>
+          <li>Git · Git Flow</li>
+          <li>GitHub · GitLab</li>
+          <li>Jira · Notion</li>
+          <li>IntelliJ IDEA · VSCode</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ── -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <div class="projects">
+
+      <!-- 부키키 -->
+      <div class="project-item">
+        <div class="project-meta">
+          <div class="project-title">부키키</div>
+          <div class="project-period">2025.01 – 2025.02</div>
+          <a href="https://github.com/kunzatt/bookiki" target="_blank" class="project-link">↗ GitHub</a>
+        </div>
+        <div class="project-content">
+          <p class="project-desc">도서관 내 상주하는 사서 없이 AIoT 기술을 활용하여 사용자와 관리자 모두가 편리하게 이용하고 관리할 수 있는 스마트 도서관 관리 시스템입니다.</p>
+          <div class="project-role">
+            <div class="role-item">
+              <span class="role-label">Backend <span class="role-pct">40%</span></span>
+              <span class="role-desc">REST API 설계 및 구현, 도서 대출/반납 비즈니스 로직, IoT 연동 WebSocket 서버, DB 모델링</span>
+            </div>
+            <div class="role-item">
+              <span class="role-label">Frontend <span class="role-pct">20%</span></span>
+              <span class="role-desc">사용자·관리자 마이페이지 대시보드 UI/UX (Vue.js)</span>
+            </div>
+            <div class="role-item">
+              <span class="role-label">DevOps <span class="role-pct">50%</span></span>
+              <span class="role-desc">CI/CD 파이프라인 구축, AWS EC2 인프라 관리, Jenkins·Docker 구성</span>
+            </div>
+          </div>
+          <div class="project-stack">
+            <div class="stack-group">
+              <span class="stack-label">Backend</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Spring Boot</span>
+                <span class="stack-tag">JPA / Hibernate</span>
+                <span class="stack-tag">WebSocket</span>
+                <span class="stack-tag">Spring Security</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">Frontend</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Vue.js</span>
+                <span class="stack-tag">TypeScript</span>
+                <span class="stack-tag">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">Database</span>
+              <div class="stack-tags">
+                <span class="stack-tag">MySQL</span>
+                <span class="stack-tag">Redis</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">DevOps</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Jenkins</span>
+                <span class="stack-tag">Docker</span>
+                <span class="stack-tag">AWS EC2</span>
+                <span class="stack-tag">nginx</span>
+                <span class="stack-tag">GitLab</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">Test</span>
+              <div class="stack-tags">
+                <span class="stack-tag">JUnit5</span>
+                <span class="stack-tag">Mockito</span>
+              </div>
+            </div>
+          </div>
+          <div class="highlights">
+            <details>
+              <summary>IoT 기기와의 실시간 통신 구조 설계 — HTTP 폴링에서 WebSocket으로 전환</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 젯슨 나노보드, 라즈베리파이 등 IoT 기기와 백엔드 서버가 실시간으로 통신해야 했습니다. 초기 HTTP 방식으로는 기기에서 이벤트(책 반납, LED 위치 표시 요청 등)가 발생할 때마다 서버가 주기적으로 상태를 확인하는 폴링이 필요했고, 이는 불필요한 네트워크 부하와 응답 지연을 유발했습니다.</p>
+                <p>HTTP는 클라이언트가 요청해야만 서버가 응답하는 단방향 구조입니다. IoT 기기는 이벤트 발생 시점이 불규칙하기 때문에 폴링 주기를 짧게 할수록 불필요한 요청이 늘어나고, 길게 하면 실시간성이 떨어지는 트레이드오프가 있었습니다.</p>
+                <p><strong>[해결 방안]</strong> Spring WebSocket을 도입해 <code>/iot/ws</code> 엔드포인트로 IoT 기기와 상시 연결을 유지했습니다. <code>IotWebSocketHandler</code>를 통해 책 위치 LED 표시, 반납 처리, 위치 업데이트 이벤트를 연결된 모든 기기에 실시간으로 브로드캐스트하도록 설계했습니다.</p>
+                <p><strong>[결과]</strong> 폴링 방식 대비 불필요한 네트워크 요청 제거, 이벤트 발생 즉시 서버 처리 가능한 양방향 통신 구조 확보</p>
+              </div>
+            </details>
+            <details>
+              <summary>OCR 오인식 문제 해결 — Levenshtein Distance 알고리즘 기반 유사도 판별</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 도서 반납 시 카메라가 책 제목을 OCR로 인식하는데, "해리포터"를 "해리포타"로 읽거나, 시리즈 도서의 경우 제목 앞부분이 동일해 다른 책임에도 같은 책으로 인식하는 문제가 빈번하게 발생했습니다.</p>
+                <p>단순 <code>equals()</code> 비교는 오탈자 수준의 차이를 걸러내지 못했고, <code>contains()</code> 부분 일치는 시리즈 도서를 구분하지 못했습니다. 완전 일치와 부분 일치 모두 OCR의 특성상 발생하는 노이즈를 처리하기에 부적합했습니다.</p>
+                <p><strong>[해결 방안]</strong> Levenshtein Distance 알고리즘을 적용해 두 문자열 간 편집 거리를 기반으로 유사도를 판별했습니다. 문자열 길이별로 기준을 다르게 설계해, 짧은 문자열(3자 이하)은 임계값 0.33으로 엄격하게, 긴 문자열은 0.5로 관대하게 적용하여 오탈자는 같은 책으로, 시리즈 도서는 다른 책으로 구분하는 균형을 찾았습니다.</p>
+                <p><strong>[결과]</strong> OCR 오인식으로 인한 잘못된 반납 처리 방지, 시리즈 도서 중복 인식 문제 해결</p>
+              </div>
+            </details>
+            <details>
+              <summary>복잡한 대출/반납 비즈니스 규칙을 안정적으로 처리하는 트랜잭션 설계</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 도서 대출/반납은 단순 CRUD가 아니라 여러 비즈니스 규칙이 맞물려 있었습니다. 대출 시 도서 가용 상태, 사용자 정지 여부, 대출 가능 권수(LoanPolicy) 세 가지를 동시에 검증해야 했고, 반납 시에는 QR 스캔 실패 → OCR fallback, 선반 카테고리 불일치 감지, 분실 도서 자동 감지, 관심 도서 등록자 알림까지 연쇄적으로 처리해야 했습니다.</p>
+                <p>각 검증과 처리 단계 중 하나라도 실패하면 데이터 정합성이 깨질 수 있었습니다. 대출 권수 초과인데 도서 상태만 변경되거나, 반납 처리는 됐는데 히스토리가 누락되는 케이스를 방지해야 했습니다.</p>
+                <p><strong>[해결 방안]</strong> <code>@Transactional</code>로 대출/반납 흐름 전체를 하나의 트랜잭션으로 묶어 중간 실패 시 롤백되도록 설계했습니다. 반납 시에는 <code>BookReturnService</code>에서 선반별 카테고리 검증 → OCR 분석 → 알림 발송 순서로 처리 단계를 명확히 분리했고, 매일 09시 스케줄러가 잘못 꽂힌 도서를 감지해 관리자에게 자동 알림을 발송하도록 설계했습니다.</p>
+                <p><strong>[결과]</strong> 복잡한 비즈니스 규칙 처리 중 부분 실패로 인한 데이터 정합성 문제 방지, 관리자 수동 확인 없이 도서 정리 알림 자동화</p>
+              </div>
+            </details>
+            <details>
+              <summary>핵심 비즈니스 로직의 단위 테스트 — JUnit5, Mockito 기반</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 대출/반납, 도서 정보 API 연동 등 핵심 비즈니스 로직에 변경이 생길 때마다 수동으로 전체 흐름을 확인해야 했습니다. 특히 외부 API(네이버 도서 API)를 사용하는 코드는 실제 API 호출 없이 테스트하기 어려웠습니다.</p>
+                <p>외부 의존성(DB, 외부 API)이 있는 코드를 실제 환경에서 테스트하면 느리고, 외부 API 상태에 따라 테스트 결과가 달라지는 비결정적 테스트가 될 수 있었습니다.</p>
+                <p><strong>[해결 방안]</strong> Mockito로 외부 의존성을 Mock 처리하고, <code>ArgumentCaptor</code>로 실제로 어떤 값이 전달됐는지까지 검증했습니다. <code>@Nested</code>와 <code>@DisplayName</code>으로 테스트 의도를 명확히 했고, 네이버 API 헤더(<code>X-Naver-Client-Id</code>, <code>X-Naver-Client-Secret</code>)가 정확히 실려있는지까지 assert하는 방식으로 작성했습니다.</p>
+                <p><strong>[결과]</strong> 외부 API 호출 없이 빠른 단위 테스트 환경 구성, 핵심 로직 변경 시 회귀 방지</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- 미미미러 -->
+      <div class="project-item">
+        <div class="project-meta">
+          <div class="project-title">미미미러</div>
+          <div class="project-period">2025.02 – 2025.04</div>
+          <a href="https://github.com/kunzatt/MMMR" target="_blank" class="project-link">↗ GitHub</a>
+        </div>
+        <div class="project-content">
+          <p class="project-desc">가정 내 설치된 지능형 미러를 통해 사용자의 일상생활과 맞춤형 정보를 제공하는 AI 기반 스마트 미러 기반 지능형 생활 관리 플랫폼입니다.</p>
+          <div class="project-role">
+            <div class="role-item">
+              <span class="role-label">Backend <span class="role-pct">95%</span></span>
+              <span class="role-desc">REST API 설계 및 구현, 데이터베이스 모델링</span>
+            </div>
+          </div>
+          <div class="project-stack">
+            <div class="stack-group">
+              <span class="stack-label">Backend</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Spring Boot</span>
+                <span class="stack-tag">Spring Data JPA</span>
+                <span class="stack-tag">Spring Security</span>
+                <span class="stack-tag">Jsoup</span>
+                <span class="stack-tag">Apache POI</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">Database</span>
+              <div class="stack-tags">
+                <span class="stack-tag">MySQL</span>
+                <span class="stack-tag">Redis</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">Test</span>
+              <div class="stack-tags">
+                <span class="stack-tag">JUnit5</span>
+                <span class="stack-tag">Mockito</span>
+              </div>
+            </div>
+          </div>
+          <div class="highlights">
+            <details>
+              <summary>서울시 버스 데이터 대량 적재 성능 개선 (30분 → 1분 이내)</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 서울시 버스 노선 정보(정류장, 버스 번호, 운행 코스 등) 약 5만 건을 MySQL에 적재해야 했습니다. 초기에는 데이터를 한 건씩 INSERT하는 방식을 사용했는데, 처리 시간이 30분 이상 소요되었습니다.</p>
+                <p>한 건씩 INSERT할 때마다 트랜잭션 시작 → 디스크 쓰기 → 인덱스 업데이트 → 트랜잭션 커밋의 사이클이 반복됩니다. 5만 건이면 이 오버헤드가 5만 번 발생하는 구조였습니다.</p>
+                <p><strong>[해결 방안]</strong> Apache POI의 StreamingReader로 엑셀을 스트리밍 방식으로 읽어 OOM을 방지하고, 500건 단위로 모아 saveAll()로 배치 INSERT하여 트랜잭션 커밋 횟수를 5만 번 → 100번으로 줄였습니다.</p>
+                <p><strong>[결과]</strong> 데이터 처리 시간 30분 → 1분 이내로 단축 (약 97% 개선)</p>
+              </div>
+            </details>
+            <details>
+              <summary>뉴스 API 없이 실시간 뉴스 제공 — Jsoup 크롤링, 스케줄러 설계</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 스마트 미러에 실시간 뉴스를 표시해야 했지만, 뉴스 Open API는 무료 플랜에서 호출 횟수 제한이 있어 지속적인 갱신이 어려웠습니다.</p>
+                <p>API 대신 직접 크롤링을 선택했으나, 네이버 뉴스 페이지의 HTML 구조를 파악하고 기사 목록과 본문을 정확히 추출하는 CSS selector를 찾는 데 시행착오가 필요했습니다. 특히 본문 파싱 시 광고 문구, 이미지 설명 등 불필요한 요소가 포함되는 문제가 있었습니다.</p>
+                <p><strong>[해결 방안]</strong> Jsoup으로 <code>media.naver.com</code>을 크롤링하여 메인 기사 5건의 제목·URL을 추출하고, 각 기사 본문에서 <code>img</code>, <code>div</code>, <code>em</code> 등의 태그를 제거하여 텍스트만 정제하는 파싱 로직을 구현했습니다. DB에 id 1~5 고정으로 upsert하여 항상 최신 5건만 유지하고, 별도의 <code>NewsScheduler</code>에서 <code>@Scheduled(cron = "0 0 * * * *")</code>로 매시간 자동 갱신되도록 설계했습니다.</p>
+                <p><strong>[결과]</strong> 외부 API 비용·호출 제한 없이 매시간 자동으로 최신 뉴스 제공, DB 상시 5건 유지로 불필요한 데이터 증가 방지</p>
+              </div>
+            </details>
+            <details>
+              <summary>외부 API 응답 신뢰성 문제 해결 — 데이터 검증 및 가공 레이어 설계</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 날씨, 버스, 지하철, 유튜브 등 다수의 외부 API를 연동했는데, OpenWeatherMap 예보 API에서 현재 기온이 25도임에도 최고 기온이 22도로 응답하는 등 논리적으로 맞지 않는 데이터가 유입되는 문제가 발생했습니다. 지하철 API는 "수인분당선", "경의중앙선"처럼 숫자가 없는 노선명을 반환해 단순 파싱이 불가능했습니다.</p>
+                <p>OpenWeatherMap 예보 API는 미래 시간대 기준으로 최고/최저 기온을 산출하기 때문에 현재 기온과 예보 기온 간의 논리적 불일치가 발생할 수 있습니다. 지하철 API는 노선명 포맷이 일관되지 않아 숫자 추출 방식으로는 처리할 수 없었습니다.</p>
+                <p><strong>[해결 방안]</strong> 서비스 레이어에서 외부 API 응답을 그대로 전달하지 않고, 유효성 검증 및 데이터 가공을 담당하는 처리 로직을 설계했습니다. 현재 기온이 예보 최고/최저 범위를 벗어나면 직접 보정하는 로직을 추가했고, 지하철 호선명↔번호 매핑 테이블을 직접 구현했습니다. 또한 날씨 데이터를 기반으로 옷차림 추천, 우산 필요 여부 등 사용자에게 의미 있는 형태로 가공하여 응답하도록 구성했습니다.</p>
+                <p><strong>[결과]</strong> 외부 API의 이상 응답에도 일관된 데이터 제공, 단순 데이터 중계가 아닌 도메인 로직이 담긴 서비스 레이어 구현</p>
+              </div>
+            </details>
+            <details>
+              <summary>도메인 특성을 반영한 DB 모델링 — 관심사 분리, Trigger 기반 집계, 인덱스 설계</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 사용자 인증, 교통수단 등록(버스/지하철), 일정, 할일, IoT 기기 연동 등 다양한 도메인 데이터를 다뤄야 했습니다. 사용자마다 등록한 교통수단이 달라 소프트 삭제 시 집계 데이터도 실시간으로 반영돼야 하는 복잡한 요구사항이 있었습니다.</p>
+                <p><code>accounts</code>에 모든 정보를 몰아넣으면 인증 관심사와 도메인 관심사가 섞여 확장이 어렵고, 버스/지하철 삭제 시 사용자의 등록 수(<code>count</code>)를 애플리케이션에서 매번 계산하면 정합성 문제가 생길 수 있었습니다. 또한 5만 건의 버스 노선 데이터를 다양한 조건으로 조회할 때 full scan이 발생했습니다.</p>
+                <p><strong>[해결 방안]</strong> <code>accounts</code>(이메일·비밀번호)와 <code>profiles</code>(닉네임·설정 등)를 분리해 인증과 도메인 관심사를 나눴습니다. <code>buses</code>/<code>metros</code> 테이블에 <code>AFT UPDATE</code>, <code>AFT INSERT</code> Trigger를 설정해 교통수단 등록·삭제 시 <code>profiles.count</code>가 DB 레벨에서 자동 동기화되도록 설계했습니다. <code>busiinformation</code>에는 <code>idx_route_id</code>, <code>idx_route</code>, <code>idx_station_id</code>, <code>idx_route_station</code>, <code>idx_route_sequence</code> 복합 인덱스 5개를 설계해 노선·정류장 기반 조회 성능을 확보했습니다. 전체 도메인에 <code>deleted</code> 컬럼 기반 soft delete를 적용해 데이터 복구 가능성을 유지했습니다.</p>
+                <p><strong>[결과]</strong> 인증/도메인 관심사 분리로 유지보수성 향상, Trigger 기반 집계로 애플리케이션 코드 없이 데이터 정합성 보장, 인덱스 설계로 대용량 노선 데이터 조회 성능 확보</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Devpilot -->
+      <div class="project-item">
+        <div class="project-meta">
+          <div class="project-title">Devpilot</div>
+          <div class="project-period">2025.04 – 2025.05</div>
+          <a href="https://github.com/kunzatt/Devpilot" target="_blank" class="project-link">↗ GitHub</a>
+        </div>
+        <div class="project-content">
+          <p class="project-desc">개발을 처음 접하거나, 자동화 배포 및 CI/CD에 익숙하지 않은 개발자들을 위한 간단한 CI/CD 프로그램입니다.</p>
+          <div class="project-role">
+            <div class="role-item">
+              <span class="role-label">Backend <span class="role-pct">50%</span></span>
+              <span class="role-desc">REST API 설계 및 구현, Jenkinsfile, Dockerfile 등 자동화 script 작성</span>
+            </div>
+          </div>
+          <div class="project-stack">
+            <div class="stack-group">
+              <span class="stack-label">Backend</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Spring Boot</span>
+                <span class="stack-tag">ProcessBuilder</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">Automation</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Groovy (Jenkinsfile DSL)</span>
+                <span class="stack-tag">Shell Script</span>
+                <span class="stack-tag">PowerShell</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">DevOps</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Jenkins</span>
+                <span class="stack-tag">Docker</span>
+                <span class="stack-tag">AWS EC2</span>
+                <span class="stack-tag">GitLab</span>
+              </div>
+            </div>
+          </div>
+          <div class="highlights">
+            <details>
+              <summary>사용자 입력 기반 CI/CD 파일 자동 생성 — 템플릿 엔진, 조건부 렌더링 설계</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> CI/CD에 익숙하지 않은 개발자들이 Jenkinsfile, Dockerfile, docker-compose, nginx.conf를 처음부터 직접 작성하는 것은 진입 장벽이 높았습니다. 프로젝트마다 Java 버전, 프론트엔드 프레임워크(React/Vue/Next.js), 브랜치 전략, MySQL/Redis/Nginx 사용 여부가 달라 단일 템플릿으로 커버하기 어려웠습니다.</p>
+                <p>Thymeleaf 템플릿 엔진을 활용하려 했으나 Groovy DSL 문법과 구문이 충돌하는 문제가 있었습니다. 또한 사용자가 선택한 옵션(Nginx 사용 여부, MySQL 설정 등)에 따라 파일 내 특정 섹션을 동적으로 포함하거나 제거해야 했습니다.</p>
+                <p><strong>[해결 방안]</strong> 템플릿 파일에 <code>##PLACEHOLDER##</code> 마커를 직접 정의하고 서비스 레이어에서 String replace로 처리하는 방식을 채택했습니다. <code>DockerfileService</code>는 사용자 입력 하나로 백엔드 Dockerfile(Maven/Gradle 분기), 프론트엔드 Dockerfile(React/Vue/Next.js 분기), docker-compose, nginx.conf까지 한 번에 생성합니다. 로컬 <code>.env</code> 파일을 파싱해 <code>VITE_*</code> 환경변수를 자동으로 <code>ARG</code>/<code>ENV</code> 블록으로 변환하고, MySQL·Redis·Nginx 사용 여부에 따라 docker-compose에 서비스 블록을 동적으로 추가했습니다.</p>
+                <p><strong>[결과]</strong> 개발자가 복잡한 CI/CD 설정 없이 입력값만으로 프로젝트에 맞는 파일 세트를 즉시 생성, 다양한 기술 스택 조합을 단일 API로 처리</p>
+              </div>
+            </details>
+            <details>
+              <summary>Spring Boot → Shell Script → EC2 원격 환경 자동 구성 — ProcessBuilder 기반 파이프라인 설계</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 사용자의 로컬 컴퓨터에서 원격 EC2 서버에 Jenkins, Docker, Java를 설치하고 플러그인 설정·보안 설정까지 자동화해야 했습니다. Spring Boot 애플리케이션에서 원격 서버의 시스템 레벨 작업을 수행하는 것은 일반적인 REST API 설계 범위를 벗어나는 문제였습니다.</p>
+                <p>Java에서 SSH 원격 명령을 직접 실행하는 것은 복잡하고 유지보수가 어렵습니다. 또한 Windows(PowerShell)와 Linux/Mac(bash) 환경을 모두 지원해야 했고, PEM 키 경로·EC2 호스트·Jenkins 포트 등 민감한 설정값을 안전하게 관리해야 했습니다.</p>
+                <p><strong>[해결 방안]</strong> <code>JenkinsInstallService</code>에서 <code>System.getProperty("os.name")</code>으로 실행 환경을 감지하고 <code>ProcessBuilder</code>로 OS에 맞는 스크립트(PowerShell/bash)를 실행하는 파이프라인을 설계했습니다. 설정값은 <code>~/.devpilot/.env</code>에 저장해 재사용 가능하도록 했습니다. Shell script(<code>main.sh</code>)는 모듈화 구조로 SSH 연결, Java/Jenkins/Docker 설치, 플러그인 설치, 보안 설정을 각 스크립트로 분리하고 <code>source</code>로 조합했습니다. <code>ProcessBuilder</code>의 stdout을 실시간으로 읽어 Spring Boot 로그로 출력해 진행 상황을 모니터링할 수 있도록 했습니다.</p>
+                <p><strong>[결과]</strong> 터미널 명령어 없이 API 호출만으로 EC2 원격 환경 전체 구성 자동화, Windows/Linux/Mac 크로스 플랫폼 지원</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHOICE & APPEAR -->
+      <div class="project-item">
+        <div class="project-meta">
+          <div class="project-title">CHOICE & APPEAR</div>
+          <div class="project-period">2025.11 – 진행 중</div>
+        </div>
+        <div class="project-content">
+          <p class="project-desc">의류 브랜드 Choice & Appear의 D2C 이커머스 플랫폼입니다.</p>
+          <div class="project-role">
+            <div class="role-item">
+              <span class="role-label">Backend</span>
+              <span class="role-desc">기획부터 참여, REST API 설계 및 구현, 데이터베이스 모델링</span>
+            </div>
+          </div>
+          <div class="project-stack">
+            <div class="stack-group">
+              <span class="stack-label">Backend</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Spring Boot</span>
+                <span class="stack-tag">JPA / Hibernate</span>
+                <span class="stack-tag">Spring Security</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">Database</span>
+              <div class="stack-tags">
+                <span class="stack-tag">MySQL</span>
+                <span class="stack-tag">Redis</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">DevOps</span>
+              <div class="stack-tags">
+                <span class="stack-tag">Jenkins</span>
+                <span class="stack-tag">Docker</span>
+                <span class="stack-tag">AWS EC2</span>
+                <span class="stack-tag">nginx</span>
+                <span class="stack-tag">GitLab</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <span class="stack-label">Test</span>
+              <div class="stack-tags">
+                <span class="stack-tag">JUnit5</span>
+                <span class="stack-tag">Mockito</span>
+                <span class="stack-tag">k6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Education ── -->
+<section id="education">
+  <div class="container">
+    <p class="section-label">Education</p>
+    <div class="list-items">
+
+      <div class="list-item">
+        <div class="list-period">2024.07 – 2025.06</div>
+        <div>
+          <div class="list-name">삼성 청년 SW 아카데미 (SSAFY)</div>
+          <div class="list-detail">
+            웹 개발자 교육 과정 수료. Java, Spring Boot, JPA, DevOps, 알고리즘.<br>
+            페어 프로그래밍 및 팀 프로젝트를 통한 협업 경험.
+          </div>
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="list-period">2017.03 – 2024.08</div>
+        <div>
+          <div class="list-name">중앙대학교 건설환경플랜트공학과</div>
+          <div class="list-detail">2020.12 – 2021.11 학과 학생회장</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Certificates ── -->
+<section>
+  <div class="container">
+    <p class="section-label">Certificates</p>
+    <div class="list-items">
+
+      <div class="list-item">
+        <div>
+          <div class="list-name">SQLD</div>
+        </div>
+        <div class="list-period">2024.12.13</div>
+      </div>
+
+      <div class="list-item">
+        <div>
+          <div class="list-name">OPIc AL</div>
+        </div>
+        <div class="list-period">2024.12.14</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
