@@ -383,15 +383,15 @@
           <div class="project-period">2025.11 – 진행 중</div>
         </div>
         <div class="project-content">
-          <p class="project-desc">의류 브랜드 Choice & Appear의 D2C 이커머스 플랫폼입니다.</p>
+          <p class="project-desc">의류 브랜드 Choice & Appear의 D2C 이커머스 플랫폼입니다. 브랜드의 제품을 직접 고객에게 판매하는 온라인 채널로, 상품 관리, 주문 및 결제, 재고 관리, 회원 서비스 등 이커머스 전반의 기능을 직접 기획하고 설계, 구현했습니다.</p>
           <div class="project-role">
             <div class="role-header">
               <span class="role-header-label">역할 및 기여</span>
               <span class="role-team">2인 프로젝트</span>
             </div>
             <div class="role-item">
-              <span class="role-label">Backend</span>
-              <span class="role-desc">기획부터 참여, REST API 설계 및 구현, 데이터베이스 모델링</span>
+              <span class="role-label">Backend <span class="role-pct">100%</span></span>
+              <span class="role-desc">서비스 기획 및 요구사항 정의, ERD 설계, REST API 설계 및 구현, 도메인 모델링</span>
             </div>
           </div>
           <div class="project-stack">
@@ -418,7 +418,7 @@
                 <span class="stack-tag">Docker</span>
                 <span class="stack-tag">AWS EC2</span>
                 <span class="stack-tag">nginx</span>
-                <span class="stack-tag">GitLab</span>
+                <span class="stack-tag">Github</span>
               </div>
             </div>
             <div class="stack-group">
@@ -429,6 +429,35 @@
                 <span class="stack-tag">k6</span>
               </div>
             </div>
+          </div>
+          <div class="highlights">
+            <details>
+              <summary>이중 재고 관리, Optimistic Lock — 장바구니 선점 재고와 오버셀 방지 설계</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 이커머스 재고 관리에는 두 가지 문제가 맞물려 있었습니다. 첫째, 장바구니에 상품을 담아둔 시간 동안 재고를 어떻게 처리할 것인가의 문제입니다. 주문 시점에만 재고를 차감하면, 여러 사용자가 동시에 장바구니에 담고 주문하는 경우 재고 초과가 발생할 수 있었습니다. 둘째, 동일 상품에 대한 동시 주문이 들어올 때 읽기-수정-쓰기 사이의 타이밍 차이로 실제 재고 이상의 주문이 처리되는 오버셀 문제가 있었습니다.</p>
+                <p>단순히 주문 시점에 재고를 차감하면 장바구니 단계에서의 선점이 없어 오버셀에 취약하고, 반대로 장바구니 추가 시 즉시 차감하면 장바구니 이탈 사용자로 인한 재고 고착 문제가 생겼습니다.</p>
+                <p><strong>[해결 방안]</strong> <code>stockQuantity</code>(실제 재고)와 <code>reservedQuantity</code>(선점 재고)를 분리한 이중 재고 구조를 설계했습니다. 장바구니 추가 시 <code>reserveStock()</code>으로 선점 재고를 증가시켜 가용 재고를 선점하고, 주문 확정 시 <code>decreaseStock()</code>으로 실제 재고를 차감하는 방식입니다. 여기에 <code>@Version</code> 기반 Optimistic Lock을 적용해 동시 요청이 들어올 경우 커밋 시점에 버전 충돌을 감지하여 오버셀을 방지했습니다.</p>
+                <p><strong>[결과]</strong> 장바구니 추가부터 주문 확정까지 전 과정에서 재고 일관성 확보, Optimistic Lock으로 동시 요청 오버셀 방지</p>
+              </div>
+            </details>
+            <details>
+              <summary>readOnly 트랜잭션 기본값 설계와 flush 시점 제어로 데이터 정합성 보장</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> 서비스 클래스에 조회와 쓰기 메서드가 혼재할 때, 기본 트랜잭션 설정에서는 Hibernate가 트랜잭션 종료 시 영속성 컨텍스트 내 모든 엔티티의 스냅샷을 비교하는 Dirty Checking을 수행합니다. 조회만 하는 메서드에도 이 비용이 발생하는 구조였습니다. 또한 대표 배송지 변경 시 기존 대표를 해제하고 새 주소를 대표로 설정하는 두 UPDATE가 순서 없이 처리될 경우, 대표 주소는 1개라는 유니크 제약을 위반할 수 있었습니다.</p>
+                <p>트랜잭션 내에서 두 엔티티를 연속으로 수정해도 JPA의 플러시 시점은 기본적으로 트랜잭션 커밋 직전이기 때문에, DB 반영 순서가 코드 작성 순서와 일치하지 않을 수 있었습니다.</p>
+                <p><strong>[해결 방안]</strong> <code>@Transactional(readOnly = true)</code>를 클래스 레벨 기본값으로 설정해 조회 메서드 전체에서 Dirty Checking을 비활성화하고, 쓰기 메서드에서만 <code>@Transactional</code>로 override하는 구조를 적용했습니다. 대표 배송지 변경 로직에서는 기존 대표 해제 후 <code>addressRepository.flush()</code>를 명시적으로 호출해 변경 사항을 DB에 먼저 반영한 뒤 새 주소를 대표로 설정함으로써 트랜잭션 내 처리 순서를 보장했습니다.</p>
+                <p><strong>[결과]</strong> 조회 트랜잭션에서 불필요한 Dirty Checking 비용 제거, flush 시점 명시로 대표 배송지 변경 시 데이터 정합성 보장</p>
+              </div>
+            </details>
+            <details>
+              <summary>Stateless JWT의 구조적 한계 극복 — Redis Blacklist 패턴으로 로그아웃 즉시 토큰 무효화</summary>
+              <div class="detail-body">
+                <p><strong>[문제 상황]</strong> JWT는 Stateless 구조상 한번 발급된 토큰은 만료 전까지 서버에서 취소할 수 없습니다. 로그아웃 후에도 탈취된 Access Token으로 재인증 없이 API를 호출할 수 있는 보안 공백이 존재했습니다. 그렇다고 DB에 토큰 상태를 저장하면 모든 요청마다 DB를 조회해야 해 JWT를 쓰는 이점이 사라지는 트레이드오프가 있었습니다.</p>
+                <p>보안을 강화하려면 서버 상태를 유지해야 하고, 상태를 유지하면 성능이 희생되는 구조적 모순이 있었습니다.</p>
+                <p><strong>[해결 방안]</strong> Redis를 활용해 두 가지 전략을 조합했습니다. Refresh Token은 Redis에 TTL과 함께 저장해 만료 관리를 DB 없이 처리하고, 로그아웃 시에는 해당 Access Token을 Redis Blacklist에 잔여 만료 시간만큼의 TTL로 등록했습니다. 이후 요청마다 Blacklist 존재 여부를 확인해 폐기된 토큰의 재사용을 차단합니다. 토큰 서명에는 HS256 대신 HS512를, 비밀번호 해싱에는 BCrypt strength 12(기본값 10)를 적용해 무차별 대입 공격에 대한 내성도 강화했습니다.</p>
+                <p><strong>[결과]</strong> Stateless JWT의 구조적 한계를 Redis로 보완해 로그아웃 즉시 토큰 무효화 달성, DB 조회 없이 인메모리 캐시로 Blacklist를 확인해 성능 영향 최소화</p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
