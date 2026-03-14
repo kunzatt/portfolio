@@ -441,12 +441,12 @@
               </div>
             </details>
             <details>
-              <summary>readOnly 트랜잭션 기본값 설계와 flush 시점 제어로 데이터 정합성 보장</summary>
+              <summary>k6 부하 테스트로 장바구니 N+1 문제 발견 — p95 응답시간 2,300ms → 120ms (95% 개선)</summary>
               <div class="detail-body">
-                <p><strong>[문제 상황]</strong> 서비스 클래스에 조회와 쓰기 메서드가 혼재할 때, 기본 트랜잭션 설정에서는 Hibernate가 트랜잭션 종료 시 영속성 컨텍스트 내 모든 엔티티의 스냅샷을 비교하는 Dirty Checking을 수행합니다. 조회만 하는 메서드에도 이 비용이 발생하는 구조였습니다. 또한 대표 배송지 변경 시 기존 대표를 해제하고 새 주소를 대표로 설정하는 두 UPDATE가 순서 없이 처리될 경우, 대표 주소는 1개라는 유니크 제약을 위반할 수 있었습니다.</p>
-                <p>트랜잭션 내에서 두 엔티티를 연속으로 수정해도 JPA의 플러시 시점은 기본적으로 트랜잭션 커밋 직전이기 때문에, DB 반영 순서가 코드 작성 순서와 일치하지 않을 수 있었습니다.</p>
-                <p><strong>[해결 방안]</strong> <code>@Transactional(readOnly = true)</code>를 클래스 레벨 기본값으로 설정해 조회 메서드 전체에서 Dirty Checking을 비활성화하고, 쓰기 메서드에서만 <code>@Transactional</code>로 override하는 구조를 적용했습니다. 대표 배송지 변경 로직에서는 기존 대표 해제 후 <code>addressRepository.flush()</code>를 명시적으로 호출해 변경 사항을 DB에 먼저 반영한 뒤 새 주소를 대표로 설정함으로써 트랜잭션 내 처리 순서를 보장했습니다.</p>
-                <p><strong>[결과]</strong> 조회 트랜잭션에서 불필요한 Dirty Checking 비용 제거, flush 시점 명시로 대표 배송지 변경 시 데이터 정합성 보장</p>
+                <p><strong>[문제 상황]</strong> k6로 장바구니 조회 API에 50 VU 동시 부하 테스트를 진행한 결과, p95 응답시간이 2,300ms로 측정됐습니다. 원인을 분석한 결과, 장바구니 아이템 N개를 조회할 때 <code>Product</code>와 <code>ProductOption</code>이 각각 N번씩 추가로 조회되는 N+1 쿼리 문제가 발생하고 있었습니다.</p>
+                <p>Lazy Loading으로 설정된 연관 엔티티를 서비스 로직에서 반복 접근하는 구조였기 때문에, 아이템 수가 늘어날수록 쿼리 수가 선형으로 증가하고 동시 사용자가 많아질수록 DB 부하가 급격히 커지는 문제였습니다.</p>
+                <p><strong>[해결 방안]</strong> Querydsl로 <code>Product</code>와 <code>ProductOption</code>을 fetch join으로 한 번에 조회하는 <code>findBasketsByAccountId</code> 메서드를 Repository 계층에 구현하고, Service 계층의 호출을 해당 메서드로 사용했습니다. 개선 후 동일한 k6 시나리오(50 VU)로 재측정해 수치를 검증했습니다.</p>
+                <p><strong>[결과]</strong> p95 응답시간 2,300ms → 120ms (약 95% 개선), 50 VU 동시 부하에서도 p95 &lt; 200ms 안정적 유지</p>
               </div>
             </details>
             <details>
