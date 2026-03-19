@@ -1,9 +1,24 @@
 // ── Copy email to clipboard ──
 function copyEmail(btn) {
-  navigator.clipboard.writeText(btn.dataset.email).then(() => {
+  const email = btn.dataset.email;
+  const onSuccess = () => {
     btn.classList.add('copied');
     setTimeout(() => btn.classList.remove('copied'), 500);
-  });
+  };
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(email).then(onSuccess);
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = email;
+    ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    onSuccess();
+  }
 }
 
 // ── Smooth scroll for nav links ──
