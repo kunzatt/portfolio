@@ -169,6 +169,8 @@ nav .container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  -webkit-appearance: none;
+  appearance: none;
   background: none;
   border: 1px solid var(--border);
   border-radius: 3px;
