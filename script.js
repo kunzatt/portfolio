@@ -1,3 +1,11 @@
+// ── Copy email to clipboard ──
+function copyEmail(btn) {
+  navigator.clipboard.writeText(btn.dataset.email).then(() => {
+    btn.classList.add('copied');
+    setTimeout(() => btn.classList.remove('copied'), 500);
+  });
+}
+
 // ── Smooth scroll for nav links ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
