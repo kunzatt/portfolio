@@ -6,18 +6,22 @@ function copyEmail(btn) {
     setTimeout(() => btn.classList.remove('copied'), 500);
   };
 
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(email).then(onSuccess);
-  } else {
+  // execCommand fallback (Safari 포함 모든 브라우저 호환)
+  const fallback = () => {
     const ta = document.createElement('textarea');
     ta.value = email;
-    ta.style.cssText = 'position:fixed;opacity:0';
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
     document.body.appendChild(ta);
     ta.focus();
     ta.select();
-    document.execCommand('copy');
+    try { document.execCommand('copy'); onSuccess(); } catch (e) {}
     document.body.removeChild(ta);
-    onSuccess();
+  };
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(email).then(onSuccess).catch(fallback);
+  } else {
+    fallback();
   }
 }
 
